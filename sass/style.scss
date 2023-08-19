@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,600;1,500&family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&family=Outfit:wght@700&family=PT+Sans&family=Roboto&family=Ubuntu:wght@400;500;700&display=swap');
+
+// ### Primary
+
+$Marine-blue: hsl(213, 96%, 18%);
+$Purplish-blue: hsl(243, 100%, 62%);
+$Pastel-blue: hsl(228, 100%, 84%);
+$Light-blue: hsl(206, 94%, 87%);
+$Strawberry-red: hsl(354, 84%, 57%);
+
+// ### Neutral
+
+$Cool-gray: hsl(231, 11%, 63%);
+$Light-gray: hsl(229, 24%, 87%);
+$Magnolia: hsl(217, 100%, 97%);
+$Alabaster: hsl(231, 100%, 99%);
+$White: hsl(0, 0%, 100%);
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $Light-gray;
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    main {
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 10px;
+        background-color: $White;
+        position: relative;
+        width: 865px;
+
+       & .list-container {
+            position: absolute;
+            bottom: 18rem;
+            left: 2.5rem;
+
+            ol {
+                list-style: none;
+
+                li {
+                    margin-bottom: 15px;
+                    color: $White;
+                    display: flex;
+                    align-items: center;
+
+                    .steps {
+                        display: inline-block;
+                    }
+
+                    .numbering-1, .numbering-2, .numbering-3, .numbering-4 {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-inline-end: 2rem;
+                        font-size: 1.3rem;
+                        width: 2rem;
+                        height: 2rem;
+                        border-radius: 50%;
+                        border: 1px solid $Pastel-blue;
+                        background-color: transparent;
+                        text-align: center;
+                    }
+                }
+
+                p {
+                    margin: 0;
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: $Light-gray;
+                }
+
+                h3 {
+                    margin: 0;
+                    font-weight: 500;
+                    color: $White;
+                }
+            }
+        }
+
+        h1 {
+            margin-block: 0.2rem;
+            color: $Marine-blue;
+        }
+
+        p {
+            margin-block-start: 0.2rem;
+            margin-block-end: 2rem;
+            color: $Cool-gray;
+        }
+
+        .step1 {
+            position: absolute;
+            left: 24rem;
+            bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+
+            .label-fname, .label-femail, .label-fnumber {
+                display: flex;
+                width: 25rem;
+                height: fit-content;
+                justify-content: space-between;
+
+                .error {
+                    color: red;
+                }
+            }
+            #fname {
+                margin-block-end: 3rem;
+            }
+
+            #femail {
+                margin-block-end: 3rem;
+            }
+
+            #fnumber {
+                margin-block-end: 3rem;
+            }
+
+            label {
+                margin-block-end: 0.5rem;
+            }
+
+            input {
+                height: 2.5rem;
+                padding-inline-start: 1rem;
+                margin-inline-end: 1.9rem;
+                border-radius: 0.3rem;
+                border-color: $Light-gray;
+            }
+
+            button {
+                width: 6rem;
+                padding: 0.9rem 0.7rem;
+                margin-inline-start: 21.4rem;
+                background-color: $Marine-blue;
+                color: $White;
+                border-radius: 0.5rem;
+                border-style: none;
+            }
+        }
+
+        .step2 {
+            position: absolute;
+            left: 24rem;
+            bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+
+            .plan {
+                display: flex;
+                gap: 1.5rem;
+
+                .arcade, .advance, .pro {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                    border: 0.5px solid $Light-gray;
+                    align-items: start;
+                    padding: 1rem;
+                    width: 6rem;
+                    border-radius: 7px;
+
+                    img {
+                        text-align: left;
+                        margin-block-end: 1rem;
+                    }
+
+                    h4 {
+                        margin-block-end: 0;
+                    }
+
+                    p {
+                        margin-block-end: 0.1rem;
+                    }
+                }
+
+                .arcade:hover,.advance:hover,.pro:hover {
+                    border-color: black;
+                    cursor: pointer;
+                }
+            }
+
+            .switch-container {
+                display: inline-block;
+                text-align: center;
+                margin-block-start: 2rem;
+    
+                p {
+                    display: inline-block;
+                    margin-block-end: 0;
+                }
+    
+                .switch {
+                    position: relative;
+                    display: inline-block;
+                    width: 60px;
+                    height: 34px;
+    
+                    input {
+                        opacity: 0;
+                        width: 0;
+                        height: 0;
+                      }
+    
+                      .slider {
+                        position: absolute;
+                        cursor: pointer;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background-color: #ccc;
+                        -webkit-transition: .4s;
+                        transition: .4s;
+                      }
+    
+                      .slider:before {
+                        position: absolute;
+                        content: "";
+                        height: 26px;
+                        width: 26px;
+                        left: 4px;
+                        bottom: 4px;
+                        background-color: white;
+                        -webkit-transition: .4s;
+                        transition: .4s;
+                      }
+                      
+                      input:checked + .slider {
+                        background-color: #2196F3;
+                      }
+                      
+                      input:focus + .slider {
+                        box-shadow: 0 0 1px #2196F3;
+                      }
+                      
+                      input:checked + .slider:before {
+                        -webkit-transform: translateX(26px);
+                        -ms-transform: translateX(26px);
+                        transform: translateX(26px);
+                      }
+                      
+                      /* Rounded sliders */
+                      .slider.round {
+                        border-radius: 34px;
+                      }
+                      
+                      .slider.round:before {
+                        border-radius: 50%;
+                      }
+                  }
+            }
+    
+            .button {
+                width: 100%;
+                height: fit-content;
+                margin-block-start: 7rem;
+            }
+            button {
+                width: 6rem;
+                padding: 0.9rem 0.7rem;
+                background-color: $Marine-blue;
+                color: $White;
+                border-radius: 0.5rem;
+                border-style: none;
+            }
+    
+            button.go-back {
+                float: left;
+                background-color: white;
+                color: $Marine-blue;
+            }
+    
+            button.next-step {
+                float: right;
+            }
+        }
+        
+        .step3 {
+            position: absolute;
+            left: 24rem;
+            bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+
+            .online-services, .larger-storage, .customizable-profile {
+                display: flex;
+                width: 23rem;
+                border: 1px solid $Cool-gray;
+                border-radius: 7px;
+                margin-block-end: 1.5rem;
+                padding-inline: 1rem;
+
+                div {
+                    width: 23rem;
+                }
+
+                input {
+                    margin-inline-end: 1rem;
+                }
+
+                h4 {
+                    margin-block-end: 0;
+                }
+
+                .desc {
+                    margin-block-end: 1rem;
+                    font-size: 0.75rem;
+                    margin-block-end: 10px;
+                }
+
+                .amount {
+                    padding: 0;
+                    margin-block-start: 2rem;
+                }
+            }
+
+            .button {
+                width: 100%;
+                height: fit-content;
+                margin-block-start: 3rem;
+            }
+            button {
+                float: right;
+                width: 6rem;
+                padding: 0.9rem 0.7rem;
+                background-color: $Marine-blue;
+                color: $White;
+                border-radius: 0.5rem;
+                border-style: none;
+            }
+    
+            button.go-back {
+                float: left;
+                background-color: white;
+                color: $Marine-blue;
+            }
+    
+            button.next-step {
+                float: right;
+            }
+        }
+
+        .step4 {
+            position: absolute;
+            left: 24rem;
+            bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+
+            .detail-container {
+                height: fit-content;
+                width: 23rem;
+                background-color: $Magnolia;
+                border-radius: 10px;
+                padding: 1rem;
+
+                .container-items1, .container-items2, .container-items3, .container-items4 {
+                    display: flex;
+                    justify-content: space-between;
+                    height: fit-content;
+                    margin-block-end: 0.5rem;
+
+                    h4 {
+                        margin: 0;
+                    }
+
+                    p {
+                        margin: 0;
+                        margin-top: 0.5rem;
+                        padding: 0;
+                    }
+                }
+
+                .container-items:nth-child(3) {
+                    margin-block-end: 2rem;
+                }
+            }
+
+            .total {
+                display: flex;
+                width: 23rem;
+                justify-content: space-between;
+                padding: 1rem;
+            }
+
+            .button {
+                width: 100%;
+                height: fit-content;
+                margin-block-start: 5rem;
+            }
+            button {
+                float: right;
+                width: 6rem;
+                padding: 0.9rem 0.7rem;
+                background-color: $Marine-blue;
+                color: $White;
+                border-radius: 0.5rem;
+                border-style: none;
+            }
+    
+            button.go-back {
+                float: left;
+                background-color: white;
+                color: $Marine-blue;
+            }
+    
+            button.next-step {
+                float: right;
+            }
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: $Purplish-blue;
+        }
+
+        .step5 {
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            left: 24rem;
+            bottom: 13rem;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+
+            .thanks-message {
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        height: 100% !important;
+        display: block;
+
+        main {
+            height:450px;
+            bottom: 90px;
+            left: 150px;
+            width: 100%;
+            background-color: $White;
+
+            .list-steps {
+                display: flex;
+                position: relative;
+                bottom: 200px;
+
+                .numbering-1,.numbering-2,.numbering-3,.numbering-4 {
+                    margin-inline-end: 0;
+                }
+            }
+
+            .step1 {
+                left: 2rem;
+                bottom: 0;
+                top: 1rem;
+                gap: 0;
+
+            input {
+                height: 200px !important;
+                width: 300px !important;
+                padding: 12px;
+                margin-block-end: 1rem !important;
+            }
+
+            button {
+                position: relative;
+                top: 4rem;
+            }
+        }
+
+        .step2 {
+            left: 2rem;
+            bottom: 0;
+            top: 1rem;
+            gap: 0;
+
+            .plan {
+                flex-direction: column;
+                gap: 0.5rem;
+
+                .arcade, .advance, .pro {
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 2rem;
+                    width: 19rem;
+
+                    h4 {
+                        margin-block-start: 0;
+                    }
+                }
+            }
+
+            .button {
+                position: relative;
+                bottom: 100px;
+                width: 400px;
+            }
+        }
+
+        .step3 {
+            left: 2rem;
+            bottom: 0;
+            top: 1rem;
+            gap: 0;
+
+            .online-services, .larger-storage, .customizable-profile {
+                width: 20rem;
+            }
+
+            .button {
+                position: relative;
+                bottom: 8px;
+                width: 400px;
+            }
+        }
+
+        .step4 {
+            left: 2rem;
+            bottom: 0;
+            top: 1rem;
+            gap: 0;
+
+            .detail-container {
+                width: 20rem;
+            }
+
+            .total {
+                width: 20rem;
+            }
+
+            .button {
+                position: relative;
+                top: 80px;
+                width: 400px;
+            }
+        }
+
+        .step5 {
+            left: 4rem;
+            bottom: 0;
+            top: 5rem;
+            width: 70%;
+        }
+    }
+
+        .mobile {
+            width: 100vh;
+        }
+    }
+}
